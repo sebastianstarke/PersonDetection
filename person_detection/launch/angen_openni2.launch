@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="namespace_prefix" default="" />
+  <arg name="start_openni2_launch" default="true" />
+
+ <!-- either use this launch file, or launch directly on the command line:
+     roslaunch openni2_launch openni2.launch camera:=xtion_camera depth_registration:=true
+  -->
+
+
+ <!-- reduce the effective Kinect/Xtion framerate by skipping frames.
+       Default is 30Hz (max), resulting in a very high data rate and CPU load.
+       E.g. 10 means only 1 of 10 frames is transmitted...
+       ... unfortunately, this does NOT work: -->
+  <param name="$(arg namespace_prefix)/xtion_camera/driver/data_skip" value="5" />
+
+  <!-- instead, please try this (or similar)
+  rosrun dynamic_reconfigure dynparam set /doro/xtion_camera/driver data_skip 5
+  -->
+
+
+  <group if="$(arg start_openni2_launch)">
+  <!-- start the OpenNI driver for the real Kinect/Xtion camera, publishing
+       to the same topics also used in Doro/Coro simulation -->
+  <include file="$(find openni2_launch)/launch/openni2.launch"  >
+    <!-- <param name="driver/data_skip" value="10" /> -->
+    <arg name="tf_prefix" value="$(arg namespace_prefix)" />
+    <arg name="camera" value="xtion_camera" />
+    <arg name="depth_registration" value="true" />
+  </include>
+
+    <!--
+depth_registration (bool, default: false)
+Remapping:
+rgb (string, default: rgb)
+ir (string, default: ir)
+depth (string, default: depth)
+depth_registered (string, default: depth_registered)
+projector (string, default: projector)
+Launch configuration:
+debug (bool, default: false) use true for gdb debugging
+respawn (bool, default: false)
+num_worker_threads (int, default: 4)
+    -->
+  </group>
+
+</launch>

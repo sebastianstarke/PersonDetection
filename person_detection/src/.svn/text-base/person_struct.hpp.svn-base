@@ -1,0 +1,6 @@
+typedef struct PotentialPerson {
+	Eigen::Vector3f centroid;
+	int count;
+	bool isTruePerson;
+	float confidence;
+} PotentialPerson;

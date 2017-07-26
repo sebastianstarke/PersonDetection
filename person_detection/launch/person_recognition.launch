@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<launch>
+
+ <!-- <arg name="kinect_topic" default="/head_mount_kinect/depth_registered/points" /> -->
+ <arg name="kinect_topic" default="/camera/depth_registered/points" />
+ <arg name="svm_config" default="$(find person_detection)/config/trainedLinearSVMForPeopleDetectionWithHOG.yaml" />
+ <arg name="min_height" default="0.1" />
+ <arg name="max_height" default="3.0" />
+ <arg name="min_prior_positions" default="10" />
+ <arg name="max_prior_positions" default="50" />
+ <arg name="centroid_movement_distance_threshold" default="0.30" />
+ <arg name="centroid_potential_area_threshold" default="0.50" />
+ <arg name="cluster_confidence" default="-1.4" />
+ <arg name="minimum_cluster_confidence" default="-3.0" />
+ <arg name="centroid_orientation_distance_threshold" default="0.25" />
+
+ <arg name="camera_optical_frame" default ="/head_mount_kinect_rgb_optical_frame" />
+ <arg name="ground_frame" default="/base_footprint" />
+ 
+ 
+ <node name="ground_based_rgbd_people_detector" pkg="person_detection" type="ground_based_rgbd_people_detector" args="
+  $(arg kinect_topic) 
+  $(arg svm_config) 
+  $(arg min_height) 
+  $(arg max_height)
+  $(arg min_prior_positions) 
+  $(arg max_prior_positions)
+  $(arg centroid_movement_distance_threshold)
+  $(arg centroid_potential_area_threshold)
+  $(arg cluster_confidence)
+  $(arg minimum_cluster_confidence)
+  $(arg centroid_orientation_distance_threshold)
+  $(arg camera_optical_frame)
+  $(arg ground_frame)
+  " />
+
+</launch>
