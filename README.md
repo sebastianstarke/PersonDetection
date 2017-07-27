@@ -8,7 +8,7 @@ This project is a machine learning SVM-HoG-based person detection for ROS (C++).
 The flowchart below shows the algorithmic solution for the RGB-D based hybrid person detection.
 <img src ="https://github.com/sebastianstarke/person_detection/blob/master/images/flowchart.png" width="100%">
 
-The following images demonstrate the performance of the algorithm.
+The following images demonstrate the performance of the algorithm.<br />
 <img src ="https://github.com/sebastianstarke/person_detection/blob/master/images/1.png" width="40%">
 <img src ="https://github.com/sebastianstarke/person_detection/blob/master/images/2.png" width="40%">
 <img src ="https://github.com/sebastianstarke/person_detection/blob/master/images/3.png" width="40%">
