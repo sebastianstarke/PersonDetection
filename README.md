@@ -9,7 +9,7 @@ The flowchart below shows the algorithmic solution for the RGB-D based hybrid pe
 <img src ="https://github.com/sebastianstarke/person_detection/blob/master/images/flowchart.png" width="100%">
 
 The following images demonstrate the performance of the algorithm.<br />
-<img src ="https://github.com/sebastianstarke/person_detection/blob/master/images/1.png" width="40%">
-<img src ="https://github.com/sebastianstarke/person_detection/blob/master/images/2.png" width="40%">
-<img src ="https://github.com/sebastianstarke/person_detection/blob/master/images/3.png" width="40%">
-<img src ="https://github.com/sebastianstarke/person_detection/blob/master/images/4.png" width="40%">
+<img src ="https://github.com/sebastianstarke/person_detection/blob/master/images/1.png" width="50%">
+<img src ="https://github.com/sebastianstarke/person_detection/blob/master/images/2.png" width="50%">
+<img src ="https://github.com/sebastianstarke/person_detection/blob/master/images/3.png" width="50%">
+<img src ="https://github.com/sebastianstarke/person_detection/blob/master/images/4.png" width="50%">
